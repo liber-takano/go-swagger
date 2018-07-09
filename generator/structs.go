@@ -94,9 +94,9 @@ type GenSchema struct {
 func (g GenSchemaList) Len() int      { return len(g) }
 func (g GenSchemaList) Swap(i, j int) { g[i], g[j] = g[j], g[i] }
 func (g GenSchemaList) Less(i, j int) bool {
-	a, ok := g[i].Extensions["x-order"].(float64)
+	a, ok := g[i].Extensions[xOrder].(float64)
 	if ok {
-		b, ok := g[j].Extensions["x-order"].(float64)
+		b, ok := g[j].Extensions[xOrder].(float64)
 		if ok {
 			return a < b
 		}
